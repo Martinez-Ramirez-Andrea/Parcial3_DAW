@@ -10,7 +10,13 @@
 
     <h2 class="text-center mb-4">Listado de Estudiantes</h2>
 
-    <!-- Formulario de búsqueda -->
+<div class="d-flex justify-content-start mb-4 gap-2">
+    <a th:href="@{/menu}" class="btn btn-dark">🏠 Menú</a>
+    <a th:href="@{/observaciones}" class="btn btn-secondary">📄 Observaciones</a>
+</div>
+
+
+   
     <form th:action="@{/estudiantes/buscar}" method="get" class="row mb-4">
         <div class="col-md-10">
             <input type="text" name="q" class="form-control" placeholder="Buscar por nombre o apellido">
@@ -20,12 +26,11 @@
         </div>
     </form>
 
-    <!-- ✅ Botón corregido -->
+   
     <div class="mb-3 text-end">
         <a th:href="@{/estudiantes/nuevo}" class="btn btn-success">Agregar Estudiante</a>
     </div>
 
-    <!-- Tabla de estudiantes -->
     <table class="table table-striped">
         <thead>
             <tr>
