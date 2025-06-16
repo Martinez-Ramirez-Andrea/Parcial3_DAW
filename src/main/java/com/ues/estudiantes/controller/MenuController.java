@@ -8,6 +8,6 @@ public class MenuController {
 
     @GetMapping("/menu")
     public String mostrarMenu() {
-        return "menu"; // Retorna la vista "menu.html" o "menu.xhtml"
+        return "menu"; 
     }
 }

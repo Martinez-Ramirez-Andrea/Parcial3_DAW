@@ -2,6 +2,9 @@ package com.ues.estudiantes.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Entity
 public class Observacion {
@@ -12,6 +15,12 @@ public class Observacion {
 
     @NotBlank(message = "La descripción es obligatoria")
     private String descripcion;
+
+    private String tipo; // Académica o Disciplinaria
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fecha;
 
     @ManyToOne
     @JoinColumn(name = "estudiante_id", nullable = false)
@@ -24,6 +33,12 @@ public class Observacion {
 
     public String getDescripcion() { return descripcion; }
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+
+    public Date getFecha() { return fecha; }
+    public void setFecha(Date fecha) { this.fecha = fecha; }
 
     public Estudiante getEstudiante() { return estudiante; }
     public void setEstudiante(Estudiante estudiante) { this.estudiante = estudiante; }

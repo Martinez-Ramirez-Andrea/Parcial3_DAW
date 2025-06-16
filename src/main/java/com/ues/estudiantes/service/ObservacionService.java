@@ -32,7 +32,6 @@ public class ObservacionService {
         repo.deleteById(id);
     }
 
-    // 🔍 MÉTODO DE BÚSQUEDA
     public List<Observacion> buscar(String texto) {
         return repo.findByDescripcionContainingIgnoreCase(texto);
     }
